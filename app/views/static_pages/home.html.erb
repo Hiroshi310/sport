@@ -1,3 +1,13 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+
 <!-- <%= video_tag("video", :autoplay, :width =>"1000px") %>-->
 <div class="cover">
   <div class="cover-inner">
@@ -5,6 +15,8 @@
       
       <h1>さあ、準備運動はじめよう</h1>
       <p>スポーツ仲間マッチングサービス " Sponge(スポンジ）"</p>
+       <p><%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %></p>
     </div>
   </div>
 </div>
+<% end %>

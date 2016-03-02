@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+
+<%= form_for(@event) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "タイトル◯◯以文字内" %>
+    
+    <%= image_tag @event.image.url if @event.image %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: "企画の内容をご記入下さい" %>
+    
+    <%= f.label :schedule %>
+    <%= f.date_field :schedule %>
+    
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control", placeholder: "price◯◯以文字内" %>
+    
+    <%= f.label :numberofpeople %>
+    <%= f.text_field :numberofpeople, class: "form-control", placeholder: "umberofpeople◯◯以文字内" %>
+    ここにyoutubeのURL貼るやつ
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
+
+</div>
+</div>
