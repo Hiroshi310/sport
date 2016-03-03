@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% events.each do |event| %>
+      <div class="event-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if event.image.present? %>
+              <%= image_tag(event.image , alt: event.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: event.title) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= event.title %>
+          </p>
+          <p><%= event.schedule %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
