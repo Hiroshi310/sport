@@ -9,9 +9,13 @@
   </div>
 </div>
   <%= render 'events/list' , events: @events %>
+  
 <% else %>
 
-<!--<%= video_tag("video", :autoplay, :width =>"1000px") %>-->
+<video autoplay loop poster="http://dropedm.jp/video.mp4" id="video-background" muted>
+  <source src="http://dropedm.jp/video.mp4" type="video/webm">
+</video>
+
 <div class="cover">
   <div class="cover-inner">
     <div class="cover-contents">
@@ -22,4 +26,5 @@
     </div>
   </div>
 </div>
+<div class="container" style="background-color:#B2DBBF;">nana</div>
 <% end %>

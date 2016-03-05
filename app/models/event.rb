@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+  acts_as_ordered_taggable_on :category
+  acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
   
   validates :user_id, presence: true
   validates :title, presence: true

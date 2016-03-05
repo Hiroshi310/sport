@@ -15,7 +15,7 @@
           <p class="title">
             <%= event.title %>
           </p>
-          <p><%= event.schedule %></p>
+          <p><%= event.schedule %><%= render 'events/tag_list', tag_list: event.category_list %></p>
         </div>
       </div>
     <% end %>
