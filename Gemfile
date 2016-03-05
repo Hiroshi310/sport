@@ -35,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'cloudinary'
 
+# タグを扱うgem
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
