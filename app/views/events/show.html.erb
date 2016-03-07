@@ -9,6 +9,9 @@
       <div class="image">
         <div class="img-wrap">
           <% #TODO 商品イメージ %>
+        <div class="title">
+            <%= @event.title %>
+        </div>
           <% if @event.image.present? %>
               <%= image_tag(@event.image , alt: @event.title, :width => "400px") %>
             <% else %>
@@ -16,14 +19,11 @@
             <% end %>
         </div>
       </div>
-      <div class="title">
-        <%= @event.title %>
-      </div>
       <!--<%#= render 'action' , item: @event %>-->
     </div>
     <div class="item-single-side">
       <div class="side-box">
-        <h4 class="side-box-title">Haveしたユーザー</h4>
+        <h4 class="side-box-title">お気に入りした人</h4>
         <div class="side-box-body">
           <%# @item.have_users.each do |user| %>
           <%#= link_to (gravatar_for user, size: 24), user %>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="side-box">
-        <h4 class="side-box-title">Wantしたユーザー</h4>
+        <h4 class="side-box-title">参加者</h4>
         <div class="side-box-body">
           <%# @item.want_users.each do |user| %>
           <%#= link_to (gravatar_for user, size: 24), user %>
