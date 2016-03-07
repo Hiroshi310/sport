@@ -1,0 +1,48 @@
+<% content_for :head do %>
+  <meta property="og:title" content="<%= @event.title %> - Sponge" />
+  <meta property="og:description" content="<%= @event.title %>" />
+<% end %>
+
+<div class="container">
+  <div class="container-inner inner-sm clearfix">
+    <div class="item-single-main">
+      <div class="image">
+        <div class="img-wrap">
+          <% #TODO 商品イメージ %>
+          <% if @event.image.present? %>
+              <%= image_tag(@event.image , alt: @event.title, :width => "400px") %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: @event.title) %>
+            <% end %>
+        </div>
+      </div>
+      <div class="title">
+        <%= @event.title %>
+      </div>
+      <!--<%#= render 'action' , item: @event %>-->
+    </div>
+    <div class="item-single-side">
+      <div class="side-box">
+        <h4 class="side-box-title">Haveしたユーザー</h4>
+        <div class="side-box-body">
+          <%# @item.have_users.each do |user| %>
+          <%#= link_to (gravatar_for user, size: 24), user %>
+          
+          <%# end %>
+        </div>
+      </div>
+      <div class="side-box">
+        <h4 class="side-box-title">Wantしたユーザー</h4>
+        <div class="side-box-body">
+          <%# @item.want_users.each do |user| %>
+          <%#= link_to (gravatar_for user, size: 24), user %>
+          <%# end %>
+        </div>
+      </div>
+      <div class="text-center">
+        <% #TODO 正しいリンク先に %>
+        <%#= link_to(image_tag("amazon-button.png", {alt: "Amazon詳細ページへ"}),  @item.detail_page_url) %>
+      </div>
+    </div>
+  </div>
+</div>
