@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305034538) do
+ActiveRecord::Schema.define(version: 20160306060748) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+  end
+
+  add_index "areas", ["lft"], name: "index_areas_on_lft"
+  add_index "areas", ["parent_id"], name: "index_areas_on_parent_id"
+  add_index "areas", ["rgt"], name: "index_areas_on_rgt"
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
