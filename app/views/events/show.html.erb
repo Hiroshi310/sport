@@ -4,24 +4,41 @@
 <% end %>
 
 <div class="container">
-  <div class="container-inner inner-sm clearfix">
-    <div class="item-single-main">
-      <div class="image">
-        <div class="img-wrap">
-          <% #TODO 商品イメージ %>
-        <div class="title">
-            <%= @event.title %>
-        </div>
-          <% if @event.image.present? %>
-              <%= image_tag(@event.image , alt: @event.title, :width => "400px") %>
+  <div class="container-inner inner-md clearfix">
+    <div class="col-xs-9">
+      <div class="event-single-main">
+        <div class="image">
+          <div class="img-wrap">
+            <div class="title">
+            <h4><%= @event.title %></h4>
+            </div>
+            <% if @event.image.present? %>
+            <%= image_tag(@event.image , alt: @event.title) %>
             <% else %>
-              <%= image_tag("no-image.png" , alt: @event.title) %>
+            <%= image_tag("no-image.png" , alt: @event.title) %>
             <% end %>
+          </div>
         </div>
-      </div>
       <!--<%#= render 'action' , item: @event %>-->
+      </div>
+        <div class="event-single-main">
+        <%= @event.schedule %>
+        <%= @event.price %>
+        </div>
     </div>
-    <div class="item-single-side">
+
+    <div class="col-xs-3">
+    <div class="event-single-side">
+      <div class="side-box">
+          <div class="button_wrapper">
+              <p>このイベントに参加しよう</p>
+        <h4 class="btn btn-primary btn-lg">イベントに参加する！</h4>
+        </div>
+        <div class="side-box-body">
+      </div>
+    </div>
+            
+    <div class="event-single-side">
       <div class="side-box">
         <h4 class="side-box-title">お気に入りした人</h4>
         <div class="side-box-body">
@@ -45,4 +62,4 @@
       </div>
     </div>
   </div>
-</div>
+</div></div>

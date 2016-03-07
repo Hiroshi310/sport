@@ -11,7 +11,7 @@
             <span class="icon-bar"></span>
           </button>
           <h1 class="logo">
-          <%= link_to image_tag('logo.png', :alt => "ロゴ",  ) %>
+          <%= link_to image_tag('logo.png', :alt => "ロゴ",  ), root_path %>
           </h1>
         </div>
 
@@ -48,17 +48,17 @@
   </nav>
 </header>
 <% else %>
-<header class="navbar navbar-fixed-top">
-  <div class="container">
-    <nav>
+<header>
+<nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-inner">
+        <div class="navbar-header">
       <span class="logo-top"><%= link_to image_tag('logo.png', :width => '130', :alt => "ロゴ", :style => "margin-top:15px;" )%></span>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", '#' %></li>
-          </li>
-
-              <li><%= link_to "新規登録", signup_path %></li>
-              <li><%= link_to "ログイン", login_path %></li>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "新規登録", signup_path %></li>
+        <li><%= link_to "ログイン", login_path %></li>
         <% end %>
       </ul>
     </nav>

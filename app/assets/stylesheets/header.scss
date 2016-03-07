@@ -3,9 +3,9 @@ header {
   .navbar {
     width: 100%;
     margin: 0;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     &.navbar-default {
       background-color: #06AED5 !important;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     }
     .container-fluid {
       margin: 0 !important;
@@ -33,7 +33,7 @@ header {
       .navbar-nav {
         li {
           a {
-            padding: 5px;
+            padding: 5px 10px 5px 10px;
             .gravatar {
               margin-right: 2px;
               img {
