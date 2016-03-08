@@ -36,6 +36,9 @@ gem 'cloudinary'
 # タグを扱うgem
 gem 'acts-as-taggable-on', '~> 3.4'
 
+# カテゴリ階層用
+gem 'awesome_nested_set'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -56,7 +59,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'puma'
   gem 'rails_12factor'
   gem 'pg'
 end
