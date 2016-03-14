@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-inner inner-md clearfix">
-    <div class="col-xs-9">
+    <div class="col-xs-offset-2 col-xs-8">
 
 
 <%= form_for(@event) do |f| %>
@@ -21,6 +21,22 @@
     
     <%= f.label :schedule %>
     <%= f.date_field :schedule %>
+    
+    <%= f.label :area %>
+    <select name="area">
+      <% @areas_parent.each do |area_parent| %>
+        <%= "<option value='#{area_parent.id}'>#{area_parent.name}</option>".html_safe %>
+      <% end %>
+    </select>
+
+    <% @areas_children.first.parent_id.upto(@areas_children.last.parent_id) do |type_index| %>
+      <%= "<select name='area_name' id='type#{type_index}'>".html_safe %>
+        <% @tmp = @areas_children.select do |n| n.parent_id == type_index end %>
+        <% @tmp.each_with_index do |area_children, index| %>
+          <%= "<option value='#{area_children.name}'>#{area_children.name}</option>".html_safe %>
+        <% end %>
+      <%= "</select>".html_safe %>
+    <% end %>
     
     <%= f.label :price %>
     <%= f.text_field :price, class: "form-control", placeholder: "price◯◯以文字内" %>

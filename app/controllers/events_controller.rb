@@ -3,11 +3,29 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build if logged_in?
-  end  
+    @areas = Area.order(:parent_id)
+    
+    #都道府県　area.parent_id=nilのものを親(@areas_parent)としておく。
+    #子供(@areas_children)はそれ以外の時
+    @areas_parent = []
+    @areas_children = []
+    @area_name = event[area_name]
+    
+    @areas.each do |area|
+      if !!area.parent_id
+        @areas_children << area
+        # Areaを探してnullの場合@areas_children[parant_id.each]
+      else
+        @areas_parent << area
+      end
+    end
+
+  end
 
   def create
+    binding.pry
     @event = current_user.events.build(event_params)
-    if @event.save
+    if @event.save!
       flash[:success] = "企画を投稿しました！"
       redirect_to root_url
     else
@@ -22,7 +40,7 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:title, :image, :content, 
-    :schedule, :price, :numberofpeople, :movie, :category_list)
+    :schedule, :price, :numberofpeople, :movie, :category_list, :area_id, :area, :area_name)
   end
 
 end

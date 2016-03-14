@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   belongs_to :user
+  belongs_to :area
   acts_as_ordered_taggable_on :category
   acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
   
