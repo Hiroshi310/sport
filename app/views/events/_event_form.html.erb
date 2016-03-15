@@ -23,7 +23,7 @@
     <%= f.date_field :schedule %>
     
     <%= f.label :area %>
-  　<%= f.collection_select :area_id, Area.all, :id, :name %>
+  　<%= f.collection_select :area, Area.all, :id, :name %>
     
     <%= f.label :price %>
     <%= f.text_field :price, class: "form-control", placeholder: "price◯◯以文字内" %>
