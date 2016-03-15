@@ -6,7 +6,6 @@ class EventsController < ApplicationController
   end
 
   def create
-    binding.pry
     @event = current_user.events.build(event_params)
     if @event.save!
       flash[:success] = "企画を投稿しました！"
