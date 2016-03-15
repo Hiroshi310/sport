@@ -9,7 +9,6 @@ class EventsController < ApplicationController
     #子供(@areas_children)はそれ以外の時
     @areas_parent = []
     @areas_children = []
-    @area_name = event[area_name]
     
     @areas.each do |area|
       if !!area.parent_id
