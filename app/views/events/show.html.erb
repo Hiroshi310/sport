@@ -10,7 +10,14 @@
         <div class="image">
           <div class="img-wrap">
             <div class="title">
-            <h4><%= @event.title %></h4>
+              <h1><%=@event.title %></h1>
+              <hr>
+            </div>
+            <div class="schedule">
+            <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 開催予定日時：<%= @event.schedule %>
+            <h5 class="favorite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h5></h4>
+
+            
             </div>
             <% if @event.image.present? %>
             <%= image_tag(@event.image , alt: @event.title) %>
@@ -23,9 +30,10 @@
       </div>
         <div class="event-single-middle">
           <div class="dayt">
-        <%= @event.schedule %>
+        
         <%= @event.price %>
         <%= @event.content %>
+        <%= @event.numberofpeople %>
           </div>
         </div>
     </div>
