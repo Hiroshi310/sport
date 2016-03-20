@@ -3,11 +3,11 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build if logged_in?
-  end  
+  end
 
   def create
     @event = current_user.events.build(event_params)
-    if @event.save
+    if @event.save!
       flash[:success] = "企画を投稿しました！"
       redirect_to root_url
     else
@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:title, :image, :content, 
-    :schedule, :price, :numberofpeople, :movie, :category_list)
+    :schedule, :price, :numberofpeople, :movie, :category_list, :area_id)
   end
 
 end
