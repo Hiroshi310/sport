@@ -22,14 +22,9 @@
     <%= f.label :schedule, "開催日程" %>
     <%= f.date_field :schedule %>
     
-<<<<<<< HEAD
+
     <%= f.label :price, "一人あたりの予算" %>
-=======
-    <%= f.label :area_id %>
-  　<%= f.collection_select :area_id, Area.all, :id, :name %>
-    
-    <%= f.label :price %>
->>>>>>> areacustom2
+
     <%= f.text_field :price, class: "form-control", placeholder: "price◯◯以文字内" %>
     
     <%= f.label :numberofpeople, "開催決定人数" %>
