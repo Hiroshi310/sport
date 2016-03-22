@@ -1,0 +1,6 @@
+<%= link_to "" , 
+  entry_path( current_user.haves.find_by(:event_id => event.id) ,
+    event_id: event.id , type: "Entry") ,
+  :class => "entry-#{item.id} btn-have btn btn-warning btn-sm entryed",
+  :remote => true,
+  :method => :delete %>
