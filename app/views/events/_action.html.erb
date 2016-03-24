@@ -1,0 +1,7 @@
+<div class="action">
+  <% if current_user.ent? @event %>
+    <%= render 'events/unent' , event: @event %>
+  <% else %>
+    <%= render 'events/ent' , event: @event %>
+  <% end %> 
+</div>
