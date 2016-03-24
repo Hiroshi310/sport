@@ -53,12 +53,12 @@
     <div class="container-fluid">
       <div class="navbar-inner">
         <div class="navbar-header">
-      <span class="logo-top"><%= link_to image_tag('logo.png', :width => '130', :alt => "ロゴ", :style => "margin-top:15px;" )%></span>
+      <span class="logo-top"><%= link_to image_tag('logo_w.png', :width => '130', :alt => "ロゴ", :style => "margin-top:15px;" )%></span>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "新規登録", signup_path %></li>
-        <li><%= link_to "ログイン", login_path %></li>
+        <li><button class="btn btn-header"><%= link_to "新規登録", signup_path %></button></li>
+        <li><button class="btn btn-header"><%= link_to "ログイン", login_path %></button></li>
         <% end %>
       </ul>
     </nav>

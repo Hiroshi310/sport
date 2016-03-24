@@ -32,7 +32,17 @@ header {
       }
       .navbar-nav {
         li {
+          .btn-header {
+            background-color: rgba(0,0,255,0);
+            border: solid 3px #fff;
+            margin: 15px;
+            padding: 10px;
+            &:hover {  
+              background-color: #06AED5;  
+            }
+          }
           a {
+            color: #fff;
             padding: 5px 10px 5px 10px;
             .gravatar {
               margin-right: 2px;
