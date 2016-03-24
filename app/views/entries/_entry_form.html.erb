@@ -1,5 +1,0 @@
-<% if @event.entry_for current_user %>
-  <%= link_to "unEntry", entry_path(entry), method: :delete, remote: true, class: 'btn btn-xs btn-warning' %>
-<% else %>
-  <%= link_to "Entry", entries_path(event_id: @event, user_id: current_user), method: :post, remote: true, class: 'btn btn-xs btn-default' %>
-<% end %>

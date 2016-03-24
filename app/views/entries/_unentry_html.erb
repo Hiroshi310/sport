@@ -1,5 +1,0 @@
-<%= form_for(current_user.user_entries.find_by(user_id: @user.id),
-             html: { method: :delete },
-             remote: true) do |f| %>
-  <%= f.submit "Unentry", class: "btn" %>
-<% end %>
