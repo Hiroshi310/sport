@@ -39,6 +39,8 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # カテゴリ階層用
 gem 'awesome_nested_set'
 
+# gem 'rmagick', require: 'RMagick'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
