@@ -1,23 +1,27 @@
 <div class="container">
   <div class="container-inner inner-default clearfix">
     <% events.each do |event| %>
+    <%= link_to(event) do %>
       <div class="event-box">
         <div class="image">
           <div class="img-wrap">
             <% if event.image.present? %>
               <%= image_tag(event.image , alt: event.title) %>
             <% else %>
-              <%= image_tag("no-image.png" , alt: event.title) %>
+              <%= image_tag("no-image2.png" , alt: event.title) %>
             <% end %>
           </div>
         </div>
-        <div class="detail">
+        <div class="detail1">
           <p class="title">
-            <%= event.title %>
+          <%= event.title %>
           </p>
-          <p><%= event.schedule %><%= render 'events/tag_list', tag_list: event.category_list %></p>
-              <%= link_to "しょうさい" , event , class: "btn btn-info btn-sm" %>
+          <% end %>
         </div>
+          <div class="detail2">
+          <p class="schedule"><%= event.schedule %> 開催予定</p>
+          <p class="tag"><%= render 'events/tag_list', tag_list: event.category_list %></p>
+          </div>
       </div>
     <% end %>
   </div>

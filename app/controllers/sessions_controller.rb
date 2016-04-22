@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout 'login_heder'
+  
   def new
   end
 

@@ -27,10 +27,10 @@ class EventimgUploader < CarrierWave::Uploader::Base
  # http://www.workabroad.jp/tech/1118 このページを参照してますよ
  
  # リサイズしたり画像形式を変更するのに必要
- # include CarrierWave::RMagick
+ #include CarrierWave::RMagick
 
  # 画像の上限を700pxにする
- # process :resize_to_limit => [700, 700]
+ #process :resize_to_limit => [600, 420]
 
   # 保存形式をJPGにする
  # process :convert => 'jpg'
