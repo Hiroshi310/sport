@@ -1,38 +1,36 @@
-<div class="container">
+<div class="container container-back">
   <div class="container-inner inner-md clearfix">
     <div class="col-xs-offset-2 col-xs-8">
 
 
-<%= form_for(@event) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.label :title, "タイトル" %>
-    <%= f.text_field :title, class: "form-control", placeholder: "タイトル◯◯以文字内" %>
-    
-    <%= image_tag @event.image.url if @event.image %>
-    <%= f.label :image, "イメージ" %>
-    <%= f.file_field :image %>
-  
-    <%= f.label :content, "企画内容" %>
-    <%= f.text_area :content, placeholder: "企画の内容をご記入下さい" %>
-    
-    <%= f.label :category_list, "カテゴリ（カンマ区切り）" %><br>
-    <%= text_field_tag 'event[category_list]', @event.category_list.join(','), "data-role" => "tagsinput" %>
-    
-    <%= f.label :schedule, "開催日程" %>
-    <%= f.date_field :schedule %>
-    
+      <%= form_for(@event) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+          <%= f.label :title, "企画のタイトル" %>
+          <%= f.text_field :title, class: "form-control", placeholder: "例）【初心者歓迎】渋谷で楽しくフットサル"%>
+          
+          <%= image_tag @event.image.url if @event.image %>
+          <%= f.label :image, "イメージ画像" %>
+          <%= f.file_field :image, :size => "5" %>
+        
+          <%= f.label :content, "企画内容" %>
+          <%= f.text_area :content, placeholder: "例）初心者歓迎のフットサルです！仕事帰りに渋谷で集まりましょう！", :size=>"10x10" %>
+          
+          <%= f.label :category_list, "カテゴリ（カンマ区切り）" %><br>
+          <%= text_field_tag 'event[category_list]', @event.category_list.join(','), "data-role" => "tagsinput" %><br><br>
+          
+          <%= f.label :schedule, "開催予定日" %><br>
+          <%= f.date_field :schedule %>
 
-    <%= f.label :price, "一人あたりの予算" %>
+          <%= f.label :price, "一人あたりの予算" %>
+          <%= f.text_field :price, class: "form-control", placeholder: "例）500" %>
+          
+          <%= f.label :numberofpeople, "開催決定人数" %>
+          <%= f.text_field :numberofpeople, class: "form-control", placeholder: "例）10" %>
 
-    <%= f.text_field :price, class: "form-control", placeholder: "price◯◯以文字内" %>
-    
-    <%= f.label :numberofpeople, "開催決定人数" %>
-    <%= f.text_field :numberofpeople, class: "form-control", placeholder: "umberofpeople◯◯以文字内" %>
-    ここにyoutubeのURL貼るやつ
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+        </div>
+        <%= f.submit "Post", class: "btn btn-primary" %>
+      <% end %>
 
 </div>
 </div>

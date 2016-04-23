@@ -6,7 +6,7 @@
         <div class="image">
           <div class="img-wrap">
             <% if event.image.present? %>
-              <%= image_tag(event.image , alt: event.title) %>
+              <%= image_tag(event.image ,:size => "250x270", alt: event.title) %>
             <% else %>
               <%= image_tag("no-image2.png" , alt: event.title) %>
             <% end %>
@@ -14,7 +14,7 @@
         </div>
         <div class="detail1">
           <p class="title">
-          <%= event.title %>
+            <%= event.title .truncate(26, omission: '…') %>
           </p>
           <% end %>
         </div>

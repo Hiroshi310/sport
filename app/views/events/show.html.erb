@@ -15,12 +15,13 @@
             </div>
             <div class="schedule">
             <h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> 開催予定日時：<%= @event.schedule %>
-            <h5 class="favorite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></h5></h4>
+            <!--<h5 class="favorite"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></span></h5>-->
+            </h4>
 
             
             </div>
             <% if @event.image.present? %>
-            <%= image_tag(@event.image , alt: @event.title) %>
+            <%= image_tag(@event.image , :size => "600x420", alt: @event.title) %>
             <% else %>
             <%= image_tag("no-image.png" , alt: @event.title) %>
             <% end %>
@@ -30,10 +31,9 @@
       </div>
         <div class="event-single-middle">
           <div class="dayt">
-        
-        <%= @event.price %>
-        <%= @event.content %>
-        <%= @event.numberofpeople %>
+            <%= @event.price %>
+            <%= @event.content %>
+            <%= @event.numberofpeople %>
           </div>
         </div>
     </div>
