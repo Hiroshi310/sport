@@ -12,18 +12,20 @@
                 </div>
                 <div class="info">
                     <div class="title">
-                        <a target="_blank" href=""><%= @user.name %></a>
+                      <%= link_to @user.name, @user %>
                     </div>
                     <div class="desc">自己紹介自己紹介自己紹介</div>
                     <div class="desc">自己紹介自己紹介自己紹介</div>
                     <div class="desc">自己紹介自己紹介自己紹介</div>
                 </div>
                 <div class="bottom">
+                    <div style="display:inline-flex">
                     <%= render 'users/follow_form' if logged_in? %>
 
-                    <a class="btn btn-danger btn-sm" rel="publisher" href="">
+                    <a class="btn btn-warning btn-sm" rel="publisher" href="">
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> メッセージ
                     </a>
+                </div>
                 </div>
             </div>
 

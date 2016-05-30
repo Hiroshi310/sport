@@ -34,21 +34,20 @@
             
             <h2>１人あたりの予算： <%= @event.price %>円　　募集人数： <%= @event.numberofpeople %>人<hr></h2>
             <h2>企画内容</h2>
-            <h4><%= @event.content %></h4>
+            <h4><%= simple_format(@event.content) %></h4>
           </div>
         </div>
-        <h4 class="btn btn-primary btn-lg">イベントに参加する！</h4>
     </div>
 
     <div class="col-xs-3">
-    <div class="event-single-side">
-      <div class="side-box">
-          <div class="button_wrapper">
-              <p>このイベントに参加しよう</p>
-        <h4 class="btn btn-primary btn-lg">イベントに参加する！</h4>
+      <div class="event-single-side">
+        <div class="side-box">
+            <div class="button_wrapper">
+                <p>このイベントに参加しよう！</p>
+          <h4 class="btn btn-primary btn-lg">イベントに参加する！</h4>
+          </div>
+          <div class="side-box-body">
         </div>
-        <div class="side-box-body">
-      </div>
     </div>
             
     <div class="event-single-side">
@@ -72,4 +71,4 @@
       <%= render 'users/profile' %>
     </div>
   </div>
-</div></div>
+</div>
