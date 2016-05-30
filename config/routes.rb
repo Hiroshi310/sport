@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :events
   resources :areas
+  resources :relationships, only: [:create, :destroy]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
